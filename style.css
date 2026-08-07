@@ -389,7 +389,7 @@ h2 {
     top: 32px;
     bottom: 32px;
     left: -1px;
-    border-left: 4px solid #ffffff;
+    color: #ffffff;
 }
 
 .settings-card h2 {
