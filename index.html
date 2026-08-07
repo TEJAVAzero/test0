@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="ko">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#131313">
+    <title>우리반 칭찬 포인트</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="app-header">
+        <div class="header-inner">
+            <div class="brand-block">
+                <p class="brand-kicker" aria-hidden="true">CLASSROOM / PRAISE STREAM</p>
+                <h1>우리반<br><span>칭찬 포인트</span></h1>
+            </div>
+
+            <nav class="screen-tabs" role="tablist" aria-label="화면 선택">
+                <button
+                    id="board-tab"
+                    class="tab-button is-active"
+                    type="button"
+                    role="tab"
+                    data-screen="board"
+                    aria-controls="board-screen"
+                    aria-selected="true"
+                >포인트 보드</button>
+                <button
+                    id="settings-tab"
+                    class="tab-button"
+                    type="button"
+                    role="tab"
+                    data-screen="settings"
+                    aria-controls="settings-screen"
+                    aria-selected="false"
+                >설정</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="app-main">
+        <section
+            id="board-screen"
+            class="screen"
+            role="tabpanel"
+            aria-labelledby="board-title"
+            tabindex="0"
+        >
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">오늘도 멋진 우리 반</p>
+                    <h2 id="board-title">포인트 보드</h2>
+                </div>
+                <p class="student-count" id="student-count" aria-live="polite"></p>
+            </div>
+
+            <div id="student-grid" class="student-grid"></div>
+        </section>
+
+        <section
+            id="settings-screen"
+            class="screen"
+            role="tabpanel"
+            aria-labelledby="settings-title"
+            tabindex="0"
+            hidden
+        >
+            <div class="settings-card">
+                <p class="eyebrow">우리 반 환경 설정</p>
+                <h2 id="settings-title">설정</h2>
+
+                <div class="settings-section">
+                    <h3>학생 관리</h3>
+
+                    <form id="student-form" class="student-form" novalidate>
+                        <label class="visually-hidden" for="student-name">학생 이름</label>
+                        <input
+                            id="student-name"
+                            name="studentName"
+                            type="text"
+                            maxlength="30"
+                            placeholder="학생 이름 입력"
+                            autocomplete="off"
+                            aria-describedby="name-error"
+                        >
+                        <button class="primary-button" type="submit" aria-label="학생 명단에 추가">
+                            추가
+                        </button>
+                    </form>
+                    <p id="name-error" class="form-error" role="alert" aria-live="polite"></p>
+
+                    <ol
+                        id="settings-student-list"
+                        class="settings-student-list"
+                        aria-live="polite"
+                    ></ol>
+                </div>
+
+                <div class="settings-section data-management-section">
+                    <h3>데이터 관리</h3>
+                    <p class="settings-description">현재 명단과 점수를 파일로 보관하거나 복원할 수 있습니다.</p>
+
+                    <div class="data-actions">
+                        <button id="export-backup" class="secondary-button" type="button">
+                            백업 파일 저장
+                        </button>
+                        <button id="select-backup" class="secondary-button" type="button">
+                            백업 파일 불러오기
+                        </button>
+                        <input
+                            id="backup-file"
+                            class="visually-hidden"
+                            type="file"
+                            accept=".json,application/json"
+                            tabindex="-1"
+                            aria-hidden="true"
+                        >
+                    </div>
+
+                    <button id="reset-scores" class="danger-button" type="button">
+                        모든 점수 초기화
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
