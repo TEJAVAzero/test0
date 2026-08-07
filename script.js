@@ -4,12 +4,12 @@ let appData = {
     version: 1,
     className: "우리반",
     students: [
-        { id: "1", name: "김민준", score: 5 },
-        { id: "2", name: "이서준", score: 3 },
-        { id: "3", name: "박지우", score: 8 },
-        { id: "4", name: "최서연", score: 6 },
-        { id: "5", name: "정도윤", score: 4 },
-        { id: "6", name: "한예린", score: 7 }
+        { id: "1", name: "학생 1", score: 0 },
+        { id: "2", name: "학생 2", score: 0 },
+        { id: "3", name: "학생 3", score: 0 },
+        { id: "4", name: "학생 4", score: 0 },
+        { id: "5", name: "학생 5", score: 0 },
+        { id: "6", name: "학생 6", score: 0 }
     ]
 };
 
